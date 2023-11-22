@@ -2,7 +2,6 @@ import express from 'express'
 import { dbConnection } from './database/dbConnection.js'
 import dotenv from 'dotenv'
 import { bootstrap } from './src/bootstrap.js'
-import cors from 'cors'
 
 dotenv.config()
 const app = express()

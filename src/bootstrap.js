@@ -3,6 +3,8 @@ import { globalError } from "./middleware/globelErrorMiddleware.js"
 import authRouter from "./modules/auth/auth.router.js"
 import userRouter from "./modules/user/user.routes.js"
 import { AppError } from "./utils/AppError.js"
+import cors from 'cors'
+
 
 
 
