@@ -7,8 +7,8 @@ dotenv.config()
 const app = express()
 const port = process.env.PORT || 5000
  // Allow Access From anyWhere
-app.use(express.json())
 
-bootstrap(app)
+
+bootstrap(app,express)
 dbConnection()
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

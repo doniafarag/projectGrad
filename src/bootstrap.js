@@ -8,7 +8,7 @@ import cors from 'cors'
 
 
 
-export const bootstrap = (app)=>{
+export const bootstrap = (app,express)=>{
     app.get('/', (req,res) => res.send('Hello World!'))
     app.use('/users',userRouter)
     app.use('/auth',authRouter)
@@ -16,6 +16,6 @@ export const bootstrap = (app)=>{
         next(new AppError('not found endpoint',404))
     })
     app.use(cors({}))
-
+    app.use(express.json())
     app.use(globalError)
 }
