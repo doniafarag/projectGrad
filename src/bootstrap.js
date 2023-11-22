@@ -8,11 +8,12 @@ import { AppError } from "./utils/AppError.js"
 
 export const bootstrap = (app)=>{
     app.get('/', (req,res) => res.send('Hello World!'))
-    app.use('/api/v1/users',userRouter)
-    app.use('/api/v1/auth',authRouter)
+    app.use('/users',userRouter)
+    app.use('/auth',authRouter)
     app.all('*',(req,res,next)=>{
         next(new AppError('not found endpoint',404))
     })
+    app.use(cors({}))
 
     app.use(globalError)
 }

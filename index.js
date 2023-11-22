@@ -7,7 +7,7 @@ import cors from 'cors'
 dotenv.config()
 const app = express()
 const port = process.env.PORT || 5000
-app.use(cors())  // Allow Access From anyWhere
+ // Allow Access From anyWhere
 app.use(express.json())
 
 bootstrap(app)
