@@ -1,11 +1,10 @@
-import express from 'express'
 import * as auth from './auth.controller.js'
 
 import { CheckCodeValidation, RestePasswordValidation, forgetPasswordValidation, signInValidation, signUpValidation, tokenValidation } from './auth.validation.js'
 import { validate } from '../../middleware/validate.js'
 
 
-const authRouter=express.Router()
+const authRouter=Router()
 
 authRouter.post('/signup',validate(signUpValidation) ,auth.signUp)
 authRouter.get('/confirmEmail/:token',auth.confirmEmail)
